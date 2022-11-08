@@ -9,10 +9,13 @@
 <body>
     <h1>Profile</h1>
     <div>{{ $user->name }}</div>
+    <div>{{ $user->email }}</div>
+    <div>{{ $user->birth_day }}</div>
+    
     <div class="col-4">
         <form action="{{ route('logout') }}" method="get">
             @csrf
-            <button type="submit" class="btn btn-primary btn-block">Logout</button>
+            <button type="submit">Logout</button>
         </form>
     </div>
 </body>

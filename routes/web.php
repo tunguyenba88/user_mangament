@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
@@ -29,4 +30,5 @@ Route::post('/login/store', [LoginController::class, 'store']);
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('list', [EmployeeController::class, 'index'])->name('index');
 });
